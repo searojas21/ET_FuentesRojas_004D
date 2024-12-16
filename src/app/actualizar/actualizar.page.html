@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>actualizar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">actualizar</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form>
+    <ion-item>
+      <ion-input type="text" name="nombre" label="Nombre:" 
+         labelPlacement="floating" [(ngModel)]="actividad.nombre">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" name="fecha" label="Fecha:" 
+         labelPlacement="floating" [(ngModel)]="actividad.fecha">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" name="horario" label="Horario:" 
+         labelPlacement="floating" [(ngModel)]="actividad.horario">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" name="horario" label="Horario:" 
+         labelPlacement="floating" [(ngModel)]="actividad.horario">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" name="ubicacion" label="Ubicación:" 
+         labelPlacement="floating" [(ngModel)]="actividad.ubicacion">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" name="descripcion" label="Descricion:" 
+         labelPlacement="floating" [(ngModel)]="actividad.descripcion">
+      </ion-input>
+    </ion-item>
+
+    <div style="text-align: center; margin-top: 30px;">
+      <ion-button (click)="updateActividad()" shape="round" color="success">
+        Actualizar
+      </ion-button>
+    </div>
+
+  </form>
+
+</ion-content>

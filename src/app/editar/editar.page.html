@@ -1,0 +1,58 @@
+<ion-header collapse="condense">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/actividades" color="light" text="Volver"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Editar Actividad</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="actividadForm" (ngSubmit)="editarActividad()">
+  
+    <ion-item>
+      <ion-label position="floating">Nombre del Evento</ion-label>
+      <ion-input formControlName="nombre" required></ion-input>
+    </ion-item>
+
+   
+    <ion-item>
+      <ion-label position="floating">Descripción</ion-label>
+      <ion-textarea formControlName="descripcion" required></ion-textarea>
+    </ion-item>
+
+    
+    <ion-item>
+      <ion-label position="stacked">Subir Imagen</ion-label>
+      <input type="file" (change)="onFileSelected($event)" />
+    </ion-item>
+    
+
+    
+    <ion-item>
+      <ion-label position="stacked">Fecha</ion-label>
+      <ion-datetime
+        formControlName="fecha"
+        displayFormat="DD MMM YYYY HH:mm"
+        pickerFormat="YYYY-MM-DDTHH:mm">
+      </ion-datetime>
+    </ion-item>
+
+  
+    <ion-item>
+      <ion-label position="floating">Horario</ion-label>
+      <ion-input formControlName="horario" required></ion-input>
+    </ion-item>
+
+   
+    <ion-item>
+      <ion-label position="floating">Ubicación</ion-label>
+      <ion-input formControlName="ubicacion" required></ion-input>
+    </ion-item>
+
+
+    <ion-button expand="full" type="submit" [disabled]="!actividadForm.valid">
+      Guardar Cambios
+    </ion-button>
+  </form>
+</ion-content>

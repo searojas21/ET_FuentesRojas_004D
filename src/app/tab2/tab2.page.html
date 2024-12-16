@@ -1,0 +1,68 @@
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/home" color="light" text="Volver"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Crear Evento</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-menu side="start" menuId="first" contentId="main-content">
+    <ion-header>
+      <ion-toolbar id="barra">
+        <ion-title class="menu-title">Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+  </ion-menu>
+
+  <div id="container">
+    <form [formGroup]="actividadForm" (ngSubmit)="crearActividad()">
+     
+      <ion-item>
+        <ion-label position="floating">Nombre del Evento</ion-label>
+        <ion-input formControlName="nombre" required></ion-input>
+      </ion-item>
+
+     
+      <ion-item>
+        <ion-label position="floating">Descripción</ion-label>
+        <ion-textarea formControlName="descripcion" required></ion-textarea>
+      </ion-item>
+
+      
+      <ion-item>
+        <ion-label position="stacked">Subir Imagen</ion-label>
+        <input type="file" (change)="onFileSelected($event)" />
+      </ion-item>
+
+    
+      <ion-item class="datetime-item">
+        <ion-label position="stacked">Fecha</ion-label>
+        <ion-datetime
+          formControlName="fecha"
+          displayFormat="DD MMM YYYY HH:mm"
+          pickerFormat="YYYY-MM-DDTHH:mm">
+        </ion-datetime>
+      </ion-item>
+      
+
+      
+      <ion-item>
+        <ion-label position="floating">Horario</ion-label>
+        <ion-input formControlName="horario" required></ion-input>
+      </ion-item>
+
+     
+      <ion-item>
+        <ion-label position="floating">Ubicación</ion-label>
+        <ion-input formControlName="ubicacion" required></ion-input>
+      </ion-item>
+
+      <br />
+
+   
+      <ion-button expand="full" type="submit" [disabled]="!actividadForm.valid">Crear Evento</ion-button>
+    </form>
+  </div>
+</ion-content>

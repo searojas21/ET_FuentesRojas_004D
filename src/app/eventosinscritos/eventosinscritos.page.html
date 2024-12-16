@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Eventos Inscritos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="eventosInscritos.length > 0">
+    <ion-item *ngFor="let evento of eventosInscritos">
+      <ion-label>
+        <h2>{{ evento.nombre }}</h2>
+        <p>{{ evento.fecha }}</p>
+        <p>{{ evento.lugar }}</p>
+
+        <p *ngIf="evento.comentario"><strong>Tu comentario:</strong> {{ evento.comentario }}</p>
+      </ion-label>
+
+      <ion-button color="danger" (click)="eliminarEvento(evento)">Eliminar</ion-button>
+      <ion-button color="primary" (click)="agregarComentario(evento)">Dejar Comentario</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-text *ngIf="eventosInscritos.length === 0">
+    No estás inscrito en ningún evento.
+  </ion-text>
+</ion-content>

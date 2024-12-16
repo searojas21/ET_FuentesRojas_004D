@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- Logo como botón del menú -->
+    <ion-buttons slot="start">
+      <ion-img 
+        src="assets/duoc.png" 
+        id="logo" 
+        (click)="openMenu()"
+      ></ion-img>
+    </ion-buttons>
+
+    <!-- Título -->
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Swiper Section -->
+  <swiper-container
+    style="margin: 20px auto; padding-left: 15px; padding-right: 15px; height: 200px;"
+    [pagination]="{ clickable: true }"
+    [navigation]="true"
+  > <!-- Activa la paginación y navegación -->
+    <swiper-slide *ngFor="let image of images">
+      <img [src]="image" style="width: 100%; height: auto;"/>
+    </swiper-slide>
+
+    <!-- Flechas de navegación -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    
+    <!-- Puntos de paginación -->
+    <div class="swiper-pagination"></div>
+  </swiper-container>
+
+  <!-- Content Section -->
+  <div id="container">
+    <strong>Duoc Events</strong>
+    <p>Bienvenidos a nuestras actividades académicas y tecnológicas.
+      Administra todas las actividades, talleres y recursos de nuestro evento tecnológico</p>
+    <h1>SOLO EN IT-EVENT!!!!</h1>
+    
+    <br>
+    <h1>HORARIO DEL EVENTO</h1>
+    <h2> Lunes 16 de Diciembre </h2>
+    <h2 class="evento-hora">Desde: 11:00 a 17:00</h2>
+    <h2>Martes 17 de Diciembre</h2>
+    <h2 class="evento-hora">Desde: 13:00 a 19:00</h2>
+  </div>
+</ion-content>

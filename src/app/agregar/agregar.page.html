@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Añadir Actividad</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="crearActividad()">
+    <ion-item>
+      <ion-label position="floating">Nombre de la Actividad</ion-label>
+      <ion-input [(ngModel)]="newActividad.nombre" name="nombre" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Fecha</ion-label>
+      <ion-input [(ngModel)]="newActividad.fecha" name="fecha" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Horario</ion-label>
+      <ion-input [(ngModel)]="newActividad.horario" name="horario" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Ubicación</ion-label>
+      <ion-input [(ngModel)]="newActividad.ubicacion" name="ubicacion" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Descripción</ion-label>
+      <ion-textarea [(ngModel)]="newActividad.descripcion" name="descripcion" required></ion-textarea>
+    </ion-item>
+
+  
+
+    <!-- Corregir el nombre del método -->
+    <ion-button (click)="crearActividad()" shape="round" color="success">
+      Añadir Actividad
+    </ion-button>
+  </form>
+</ion-content>

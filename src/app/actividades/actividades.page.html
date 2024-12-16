@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Eventos</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="light" fill="outline" [routerLink]="['/tabs/tab2']">
+        <ion-icon name="add-circle-outline" slot="start"></ion-icon>
+        <span>Crear Evento</span>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item *ngFor="let class of actividades">
+    <ion-thumbnail slot="start">
+      <img [src]="class.actividad_imagen" />
+    </ion-thumbnail>
+    <ion-label>
+      <h1>{{ class.nombre }}</h1>
+      <p>{{ class.descripcion }}</p>
+      <br>
+      <h2>{{class.ubicacion}}</h2>
+      <h3>{{ class.horario }}</h3>
+      <br>
+      <h4>{{ class.fecha | date: 'd \'de\' MMMM \'de\' y' }}</h4>
+      
+
+    </ion-label>
+    <ion-button slot="end" color="primary" [routerLink]="['/editar', class.id]">
+      Modificar
+    </ion-button>    
+    <ion-button slot="end" color="danger" (click)="deleteActividad(class.id)">
+      Eliminar
+    </ion-button>
+  </ion-item>
+  
+  <!-- ESTE ME AYUDA A GENERAR MI QRRR (ALFIN)    ) -->
+  <div *ngIf="qrCodeData" class="qr-code-container">
+    <h3>QR Code:</h3>
+    <qrcode [qrdata]="qrCodeData" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+  </div>
+</ion-content>

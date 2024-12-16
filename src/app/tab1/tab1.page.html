@@ -1,0 +1,36 @@
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/home" color="light" text="Volver"></ion-back-button>
+      </ion-buttons>
+      <ion-title>ESCANER QR</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-menu side="start" menuId="first" contentId="main-content">
+    <ion-header>
+      <ion-toolbar id="barra">
+        <ion-title class="menu-title">Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+  </ion-menu>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>ACTIVE SU CAMARA </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <zxing-scanner
+        [formats]="formats"
+        (scanSuccess)="scanSuccessHandler($event)">
+      </zxing-scanner>
+
+      <!-- Mostrar el resultado del QR escaneado -->
+      <div *ngIf="qrResult">
+        <h3>Último Resultado:</h3>
+        <p>{{ qrResult }}</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
