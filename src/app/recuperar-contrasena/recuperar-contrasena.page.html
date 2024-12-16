@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Recuperar Contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div style="padding: 16px;">
+    <h2>Recuperar Contraseña</h2>
+    <form [formGroup]="recoverForm">
+      <ion-item>
+        <ion-input
+          type="email"
+          placeholder="Ingrese su correo electrónico"
+          label="Correo"
+          labelPlacement="floating"
+          formControlName="email">
+        </ion-input>
+      </ion-item>
+      <div *ngIf="recoverForm.get('email')?.invalid && recoverForm.get('email')?.touched">
+        <ion-text color="danger">Por favor, ingrese un correo válido.</ion-text>
+      </div>
+
+      <ion-item>
+        <ion-input
+          type="password"
+          placeholder="Nueva contraseña"
+          label="Nueva Contraseña"
+          labelPlacement="floating"
+          formControlName="newPassword">
+        </ion-input>
+      </ion-item>
+      <div *ngIf="recoverForm.get('newPassword')?.invalid && recoverForm.get('newPassword')?.touched">
+        <ion-text color="danger">La contraseña debe tener al menos 8 caracteres.</ion-text>
+      </div>
+
+      <ion-button expand="block" (click)="recoverPassword()" [disabled]="!recoverForm.valid">
+        Actualizar Contraseña
+      </ion-button>
+    </form>
+  </div>
+</ion-content>
+

@@ -1,0 +1,50 @@
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/" color="light" text="Volver"></ion-back-button>
+      </ion-buttons>
+
+      <ion-title>Editar Evento</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <form (ngSubmit)="onSubmit()" #eventForm="ngForm">
+      <ion-item>
+        <ion-label position="floating">Nombre del Evento</ion-label>
+        <ion-input [(ngModel)]="eventName" name="eventName" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Descripción</ion-label>
+        <ion-textarea [(ngModel)]="eventDescription" name="eventDescription" required></ion-textarea>
+      </ion-item>
+
+      <ion-buttons slot="start">
+        <ion-button (click)="toggleDateTime()">
+          <ion-icon slot="start" name="calendar-outline"></ion-icon>
+          Seleccionar Fecha y Hora
+        </ion-button>
+      </ion-buttons>
+
+      <ion-input [readonly]="true" (click)="toggleDateTime()">
+        {{ selectedDateTime }}
+      </ion-input>
+
+      <ion-datetime 
+        *ngIf="showDateTime" 
+        [(ngModel)]="selectedDateTime" 
+        (ionChange)="onDateTimeChange($event)" 
+        name="dateTime" 
+        displayFormat="DD MMM YYYY HH:mm" 
+        pickerFormat="YYYY-MM-DDTHH:mm"
+        class="custom-datetime">
+      </ion-datetime>
+
+      <br>
+      <ion-button expand="full" type="submit">Editar Evento</ion-button>
+    </form>
+  </div>
+</ion-content>
+

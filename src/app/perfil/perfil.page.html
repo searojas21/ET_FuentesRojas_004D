@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="Volver()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Editar Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <div class="profile-header">
+    <div class="image-wrapper">
+      <img [src]="imagenPerfil" alt="Foto de perfil" class="profile-avatar" />
+      <button class="edit-icon" (click)="triggerFileInput()">  
+        <ion-icon name="pencil-outline"></ion-icon>
+      </button>
+    </div>
+    <input type="file" id="fileInput" (change)="onImageChange($event)" hidden />
+  </div>
+
+  <!-- Foooormulario DEL PERFFIL -->
+  <form [formGroup]="perfilForm" (ngSubmit)="saveChanges()">
+    <ion-item>
+      <ion-label position="stacked">Nombre de usuario</ion-label>
+      <ion-input formControlName="username" placeholder="Nombre de usuario"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Correo electrónico</ion-label>
+      <ion-input formControlName="email" placeholder="Correo electrónico"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Nueva contraseña</ion-label>
+      <ion-input type="password" formControlName="password" placeholder="Nueva contraseña"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Confirmar nueva contraseña</ion-label>
+      <ion-input type="password" formControlName="confirmPassword" placeholder="Confirmar nueva contraseña"></ion-input>
+    </ion-item>
+
+   
+    <ion-button expand="full" shape="round" color="success" type="submit"
+      [disabled]="!perfilForm.valid || (perfilForm.value.password && perfilForm.value.password !== perfilForm.value.confirmPassword)">
+      Guardar cambios
+    </ion-button>
+  </form>
+</ion-content>
+
+
+

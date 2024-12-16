@@ -1,0 +1,24 @@
+<ion-app>
+  <ion-menu contentId="main" menuId="first" side="start" type="overlay">
+    <ion-header>
+      <ion-toolbar color="warning">
+        <ion-icon slot="start" name="person-outline" size="large" style="padding-left:10px;"></ion-icon>
+        <ion-title>Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list lines="none">
+        <ion-menu-toggle auto-hide="false" *ngFor="let m of opciones">
+          <ion-item (click)="handleOption(m)" detail="true">
+            <ion-icon slot="start" [name]="m.icon" color="dark"></ion-icon>
+            <ion-label>{{m.name}}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list> 
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>
+

@@ -1,0 +1,113 @@
+{
+  "actividades":[
+      {
+          "actividad id": "1",
+          "actividad": "Taller de Programacion Web",
+          "fecha": "Lunes 25 de Noviembre",
+          "horario": "11:00 - 13:00",
+          "ubicacion": "Sala 211, Torre 1",
+          "descripcion": "Aprende los fundamentos de desarrollo web con tecnologías modernas como HTML, CSS, y JavaScript.",
+          "actividad imagen":"assets/ProgrmacionWeb.jpg"
+        },
+        {
+          "actividad id": "2",
+          "actividad": "Introduccion a la IA",
+          "fecha": "Lunes 25 de Noviembre",
+          "horario": "12:00 - 14:00",
+          "ubicacion": "Auditorio, Piso-1",
+          "descripcion": "Una sesión interactiva donde descubrirás los conceptos básicos de la IA y cómo se está utilizando en el mundo moderno.",
+          "actividad imagen": "assets/IntroIA.jpg"
+        },
+      {
+          "actividad id": "3",
+          "actividad": "Taller de Desarrollo Movil",
+          "fecha": "Lunes 25 de Noviembre",
+          "horario": "14:30 - 17:00",
+          "ubicacion": "Sala 202, Torre 1",
+          "descripcion": "Explora el desarrollo de aplicaciones móviles con Ionic y Angular. Construye tu primera aplicación en tan solo unas horas.",
+          "actividad imagen": "assets/TallerAppM.png"
+        },
+      {
+          "actividad id": "4",
+          "actividad": "Taller de Robotica",
+          "fecha": "Lunes 25 de Noviembre",
+          "horario": "14:00 - 16:30",
+          "ubicacion": "Gimnasio",
+          "descripcion": "Descubre el mundo de la robótica y construye tus primeros robots con herramientas avanzadas.",
+          "actividad imagen": "assets/TallerRobotica.jpg"
+
+        },  
+        {
+          "actividad id": "5",
+          "actividad": "Seminario de Ciberseguridad",
+          "fecha": "Martes 26 de Noviembre",
+          "horario": "13:00 - 15:00",
+          "ubicacion": "Sala 224, Torre 2",
+          "descripcion": "Descubre las últimas tendencias en ciberseguridad y cómo proteger tus datos en un mundo cada vez más digitalizado.",
+          "actividad imagen": "assets/Ciberseguridad.jpg"
+
+        },
+        {
+          "actividad id": "6",
+          "actividad": "Taller de Desarrollo en Python",
+          "fecha": "Martes 10 de Noviembre",
+          "horario": "12:30 - 15:00",
+          "ubicacion": "Sala 202, Torre 1",
+          "descripcion": "Aprende a programar en Python desde cero. En este taller práctico, desarrollarás tus primeras aplicaciones con uno de los lenguajes más populares del momento.",
+          "actividad imagen": "assets/DesarrolloPy.jpg"
+        },
+        {
+          "actividad id": "7",
+          "actividad": "Seminario de Redes",
+          "fecha": "Martes 10 de Noviembre",
+          "horario": "15:30 - 17:00",
+          "ubicacion": "Sala 208, Torre 1",
+          "descripcion": "Aprende los fundamentos de las redes informáticas y cómo optimizar la conectividad en grandes infraestructuras.",
+          "actividad imagen": "assets/Redes.jpg"
+        },
+        {
+          "actividad id": "8",
+          "actividad": "Taller de Telecomunicaciones",
+          "fecha": "Martes 10 de Noviembre",
+          "horario": "16:00 - 18:50",
+          "ubicacion": "Sala 209, Torre 1",
+          "descripcion": "Descubre los últimos avances en telecomunicaciones, desde redes 5G hasta el futuro de la conectividad global.",
+          "actividad imagen": "assets/Teleco.jfif"
+        }       
+      ],
+      "usuarios": [
+        {
+          "id":"1",
+          "username":"pepe1",
+          "password":"gato1234",
+          "email":"pepe1@mail.cl",
+          "isactive":true,
+          "imagen user": "assets/avatar.png"
+        },
+        {
+          "id":"2",
+          "username":"manolo2",
+          "password":"gato1234",
+          "email":"manolo2@mail.cl",
+          "isactive":true,
+          "imagen user": "assets/"
+        },
+        {
+          "id":"3",
+          "username":"maria3",
+          "password":"casa1234",
+          "email":"maria3@mail.cl",
+          "isactive":true,
+          "imagen user": "assets/"
+        },
+        {
+          "id":"4",
+          "username":"martina4",
+          "password":"casa1234",
+          "email":"martina4@mail.cl",
+          "isactive":true,
+          "imagen user": "assets/"
+        }
+    
+      ]
+  }

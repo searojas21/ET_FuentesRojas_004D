@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Registro a Clases</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let class of actividades">
+      <ion-thumbnail slot="start">
+        <img [src]="class.actividad_imagen">
+      </ion-thumbnail>
+      <ion-label>
+        <h1>{{ class.nombre }}</h1>
+        <p>{{ class.descripcion }}</p>
+        <h2>{{ class.fecha | date: 'd \'de\' MMMM \'de\' y' }}</h2>
+      </ion-label>
+      <ion-button slot="end" (click)="registerToClass(class)">Registrar</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <div *ngIf="qrCodeData" class="qr-code-container">
+    <h3>Código QR generado:</h3>
+    <qrcode [qrdata]="qrCodeData" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+  </div>
+</ion-content>
+
+
+

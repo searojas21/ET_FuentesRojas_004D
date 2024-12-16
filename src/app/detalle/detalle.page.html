@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="volver()">
+        Regresar
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Detalle de Actividad</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card style="margin-top: 50%;">
+    <ion-card-header>
+      <ion-card-subtitle>Id Actividad: {{evento.id}}</ion-card-subtitle>
+      <ion-card-title>Nombre Actividad: {{evento.nombre}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>
+        Fecha: {{evento.fecha}}<br>
+        Horario: {{evento.horario}}<br>
+        Ubicación: {{evento.ubicacion}}<br>
+        Descripción: {{evento.descripcion}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Botón para actualizar la actividad -->
+  <div style="text-align: center; margin-top: 30px;">
+    <ion-button (click)="actualizarActividad(evento)" shape="round" color="warning">
+      Actualizar Actividad
+    </ion-button>
+  </div>
+
+
+
+</ion-content>

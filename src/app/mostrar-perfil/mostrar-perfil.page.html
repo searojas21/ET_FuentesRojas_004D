@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" text="" icon="arrow-back-outline"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="profile-container">
+    <div class="profile-header">
+      <img [src]="usuario?.profileImage || defaultImage" alt="Foto de perfil" class="profile-avatar" />
+    </div>
+
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Nombre de usuario</ion-label>
+        <ion-text>{{ usuario?.username }}</ion-text>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Correo electrónico</ion-label>
+        <ion-text>{{ usuario?.email }}</ion-text>
+      </ion-item>
+    </ion-list>
+
+    <div class="button-row">
+      <ion-button shape="round" color="warning" (click)="editarPerfil()">
+        Editar Perfil
+      </ion-button>
+      <ion-button shape="round" color="success" (click)="eventosinscritos()">
+        Eventos Inscritos
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

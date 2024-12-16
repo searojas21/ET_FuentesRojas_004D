@@ -1,0 +1,84 @@
+<ion-menu side="start" menuId="first" contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-menu>
+
+<ion-content id="main-content" [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-buttons slot="start" *ngIf="false">
+        <ion-menu-button menu="first">
+          <ion-img src="assets/duoc.png" id="logo"></ion-img>
+        </ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <br>
+  <h1>Regístrate</h1>
+  <div>
+    <ion-card>
+      <ion-card-content>
+        <!-- Formulario Reactivo -->
+        <form [formGroup]="registroForm">
+          <ion-item>
+            <ion-label position="floating">Usuario</ion-label>
+            <ion-input type="text" formControlName="username"></ion-input>
+          </ion-item>
+          <div *ngIf="registroForm.get('username')?.invalid && (registroForm.get('username')?.dirty || registroForm.get('username')?.touched)">
+            <div *ngIf="registroForm.get('username')?.hasError('required')">*Usuario es obligatorio</div>
+            <div *ngIf="registroForm.get('username')?.hasError('minlength')">*Usuario debe tener al menos 6 caracteres</div>
+          </div>
+
+          <ion-item>
+            <ion-label position="floating">Correo Electrónico</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <div *ngIf="registroForm.get('email')?.invalid && (registroForm.get('email')?.dirty || registroForm.get('email')?.touched)">
+            <div *ngIf="registroForm.get('email')?.hasError('required')">*Correo es obligatorio</div>
+            <div *ngIf="registroForm.get('email')?.hasError('email')">*Correo no válido</div>
+          </div>
+
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+          <div *ngIf="registroForm.get('password')?.invalid && (registroForm.get('password')?.dirty || registroForm.get('password')?.touched)">
+            <div *ngIf="registroForm.get('password')?.hasError('required')">*Contraseña es obligatoria</div>
+            <div *ngIf="registroForm.get('password')?.hasError('pattern')">*Debe tener al menos 8 caracteres, una letra y un número</div>
+          </div>
+
+          <ion-item>
+            <ion-label position="floating">Repetir Contraseña</ion-label>
+            <ion-input type="password" formControlName="confirmPassword"></ion-input>
+          </ion-item>
+          <div *ngIf="registroForm.get('confirmPassword')?.invalid && (registroForm.get('confirmPassword')?.dirty || registroForm.get('confirmPassword')?.touched)">
+            <div *ngIf="registroForm.get('confirmPassword')?.hasError('required')">*Repetir contraseña es obligatorio</div>
+            <div *ngIf="registroForm.hasError('passwordMismatch')">*Las contraseñas no coinciden</div>
+          </div>
+
+          <ion-item>
+            <ion-label position="floating">RUT</ion-label>
+            <ion-input type="text" formControlName="rut"></ion-input>
+          </ion-item>
+          <div *ngIf="registroForm.get('rut')?.invalid && (registroForm.get('rut')?.dirty || registroForm.get('rut')?.touched)">
+            <div *ngIf="registroForm.get('rut')?.hasError('required')">*RUT es obligatorio</div>
+            <div *ngIf="registroForm.get('rut')?.hasError('minlength')">*RUT debe tener al menos 8 caracteres</div>
+            <div *ngIf="registroForm.get('rut')?.hasError('maxlength')">*RUT no puede tener más de 10 caracteres</div>
+          </div>          
+
+          <ion-item>
+            <ion-label>Imagen de Perfil</ion-label>
+            <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+          </ion-item>
+
+          <br>
+          <ion-button (click)="crearUsuario()" [disabled]="!registroForm.valid">Registrarse</ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
